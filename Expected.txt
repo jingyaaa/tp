@@ -1,2 +1,2 @@
 {"name":"apple","quantity":2.0}
-{"name":"lemon","quantity":2.5}
+{"name":"egg","quantity":3.0}

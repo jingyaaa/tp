@@ -22,21 +22,21 @@ class IngredientStorageTest {
         dukeSession.getIngredientStorage().filename = "Output.txt";
         dukeSession.getIngredientStorage().getFile(dukeSession.getIngredients());
         Ingredient ingredientToAdd1 = new Ingredient("apple", 2);
-        Ingredient ingredientToAdd2 = new Ingredient("lemon", 2.5);
+        Ingredient ingredientToAdd2 = new Ingredient("egg", 3);
         dukeSession.getIngredientStorage().writeIngredientToFile(ingredientToAdd1);
         dukeSession.getIngredientStorage().writeIngredientToFile(ingredientToAdd2);
         String fileOutput = new String(Files.readAllBytes(Path.of("Output.txt")));
         String fileExpected = new String(Files.readAllBytes(Path.of("Expected.txt")));
         assertEquals(fileExpected, fileOutput);
     }
-
+    
     @Test
     public void writeIngredientsToFile() throws IOException, DukeException {
         DukeSession dukeSession = new DukeSession();
         dukeSession.getIngredientStorage().filename = "Output.txt";
         IngredientList ingredientList = new IngredientList();
         Ingredient ingredientToAdd1 = new Ingredient("apple", 2);
-        Ingredient ingredientToAdd2 = new Ingredient("lemon", 2.5);
+        Ingredient ingredientToAdd2 = new Ingredient("egg", 3);
         ingredientList.add(ingredientToAdd1);
         ingredientList.add(ingredientToAdd2);
         dukeSession.getIngredientStorage().writeIngredientsToFile(ingredientList);
