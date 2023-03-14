@@ -15,14 +15,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class IngredientStorageTest {
 
-    private final Ingredient ingredientToAdd1 = new Ingredient("apple", 2);
-    private final Ingredient ingredientToAdd2 = new Ingredient("carrot", 2.5);
-
     @Test
     public void writeIngredientToFile() throws IOException {
         DukeSession dukeSession = new DukeSession();
         dukeSession.getIngredientStorage().filename = "Output.txt";
         dukeSession.getIngredientStorage().getFile(dukeSession.getIngredients());
+        Ingredient ingredientToAdd1 = new Ingredient("apple", 2);
+        Ingredient ingredientToAdd2 = new Ingredient("carrot", 2.5);
         dukeSession.getIngredientStorage().writeIngredientToFile(ingredientToAdd1);
         dukeSession.getIngredientStorage().writeIngredientToFile(ingredientToAdd2);
         String fileOutput = new String(Files.readAllBytes(Path.of("Output.txt")));
@@ -35,6 +34,8 @@ class IngredientStorageTest {
         DukeSession dukeSession = new DukeSession();
         dukeSession.getIngredientStorage().filename = "Output.txt";
         IngredientList ingredientList = new IngredientList();
+        Ingredient ingredientToAdd1 = new Ingredient("apple", 2);
+        Ingredient ingredientToAdd2 = new Ingredient("carrot", 2.5);
         ingredientList.add(ingredientToAdd1);
         ingredientList.add(ingredientToAdd2);
         dukeSession.getIngredientStorage().writeIngredientsToFile(ingredientList);
