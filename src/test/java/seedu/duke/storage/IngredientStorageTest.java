@@ -2,6 +2,7 @@ package seedu.duke.storage;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.AfterEach;
+import seedu.duke.DukeException;
 import seedu.duke.DukeSession;
 import seedu.duke.ingredient.Ingredient;
 import seedu.duke.ingredient.IngredientList;
@@ -16,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class IngredientStorageTest {
 
     @Test
-    public void writeIngredientToFile() throws IOException {
+    public void writeIngredientToFile() throws IOException, DukeException {
         DukeSession dukeSession = new DukeSession();
         dukeSession.getIngredientStorage().filename = "Output.txt";
         dukeSession.getIngredientStorage().getFile(dukeSession.getIngredients());
@@ -30,7 +31,7 @@ class IngredientStorageTest {
     }
 
     @Test
-    public void writeIngredientsToFile() throws IOException {
+    public void writeIngredientsToFile() throws IOException, DukeException {
         DukeSession dukeSession = new DukeSession();
         dukeSession.getIngredientStorage().filename = "Output.txt";
         IngredientList ingredientList = new IngredientList();
