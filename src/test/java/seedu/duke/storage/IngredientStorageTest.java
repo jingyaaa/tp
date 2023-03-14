@@ -22,7 +22,7 @@ class IngredientStorageTest {
         dukeSession.getIngredientStorage().filename = "Output.txt";
         dukeSession.getIngredientStorage().getFile(dukeSession.getIngredients());
         Ingredient ingredientToAdd1 = new Ingredient("apple", 2);
-        Ingredient ingredientToAdd2 = new Ingredient("carrot", 2.5);
+        Ingredient ingredientToAdd2 = new Ingredient("lemon", 2.5);
         dukeSession.getIngredientStorage().writeIngredientToFile(ingredientToAdd1);
         dukeSession.getIngredientStorage().writeIngredientToFile(ingredientToAdd2);
         String fileOutput = new String(Files.readAllBytes(Path.of("Output.txt")));
@@ -36,7 +36,7 @@ class IngredientStorageTest {
         dukeSession.getIngredientStorage().filename = "Output.txt";
         IngredientList ingredientList = new IngredientList();
         Ingredient ingredientToAdd1 = new Ingredient("apple", 2);
-        Ingredient ingredientToAdd2 = new Ingredient("carrot", 2.5);
+        Ingredient ingredientToAdd2 = new Ingredient("lemon", 2.5);
         ingredientList.add(ingredientToAdd1);
         ingredientList.add(ingredientToAdd2);
         dukeSession.getIngredientStorage().writeIngredientsToFile(ingredientList);
