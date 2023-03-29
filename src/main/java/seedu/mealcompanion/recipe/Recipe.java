@@ -7,6 +7,7 @@ public class Recipe {
     private int calorieCount;
     private int prepTime;
     private int cookTime;
+
     private IngredientList ingredients;
     private InstructionList instructions;
 
